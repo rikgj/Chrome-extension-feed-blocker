@@ -1,0 +1,23 @@
+.block{
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: black;
+}
+
+.youtube{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.facebook{
+  position: absolute;
+  width: 105%;
+  top: 0;
+  left: -5px;
+  background-color: #f0f2f5;
+  padding:0;
+}

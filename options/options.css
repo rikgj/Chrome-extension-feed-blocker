@@ -1,0 +1,9 @@
+
+.container_time{
+  box-sizing: border-box;
+  width: 500 px;
+  display: inline-block;
+}
+.container_time > select {
+  display: inline-block;
+}
