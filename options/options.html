@@ -2,17 +2,45 @@
 <html style={width="300 px"}>
   <head>
     <link rel="stylesheet" href="options.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
-  <body style={width="300 px"}>
-    <p>Current time: <span id="info"></span></p>
-    <p>Set new time:</p>
-    <div class="container_time">
-      <select id="inp_hour"></select>
-      <select id="inp_min"></select>
+  <body>
+    <div class="container_main">
+      <h2>Options</h2>
+
+      <div class="container_content">
+
+        <div class="content">
+          <div>
+            <p>Current time:</p>
+          </div>
+          <div>
+            <p>Set new time:</p>
+          </div>
+          <div class="">
+            <p>Block weekends:</p>
+          </div>
+        </div>
+
+        <div class="content">
+          <div id="out_time"></div>
+          <div>
+            <select id="inp_hour"></select>
+            <select id="inp_min"></select>
+          </div>
+          <div class="">
+            <input id="inp_check_weekends" type="checkbox">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container_btn">
+          <button id="btn_update" class="btn">Update</button>
+      </div>
+      <a href="options_adv.html">Advanced options</a>
     </div>
-    <div class="container_btn">
-        <button id="btn_update">Update</button>
-    </div>
+
     <script type="text/javascript" src="options.js"></script>
   </body>
 </html>
