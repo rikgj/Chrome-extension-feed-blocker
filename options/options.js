@@ -49,6 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       chrome.storage.sync.set({time_settings: time_settings}, () => {
         updateInterface();
+        let out = document.getElementById("update_done");
+        out.innerText = "Updated!";
+        setTimeout(()=>{
+          out.innerText = "";
+        },1500);
       });
     });
   });

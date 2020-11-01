@@ -45,9 +45,6 @@ chrome.storage.sync.get("time_settings", (data) => {
       day+="<div class='ct_slider'>";
         day+="<input id='inp_range-" + i + "' type='range' min='0' max='35' value='" + range_val + "'>";
       day+="</div>";
-
-
-
     day+="</div>";
 
     parent.innerHTML+=day;
@@ -74,7 +71,13 @@ function btnUpdate(){
     let day = [block, time];
     new_settings.push(day);
   }
-  chrome.storage.sync.set({time_settings: new_settings});
+  chrome.storage.sync.set({time_settings: new_settings},()=>{
+    let out = document.getElementById("update_done");
+    out.innerText = "Updated!";
+    setTimeout(()=>{
+      out.innerText = "";
+    },1500);
+  });
 }
 
 function updateRangeVal(evt){
