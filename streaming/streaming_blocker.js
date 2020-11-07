@@ -42,7 +42,7 @@ chrome.storage.sync.get("time_settings", (data) => {
         // a gentle nudge that it is getting late
         alert("Maybe you should go to bed.");
     } else {
-        alert("Feel free to watch!");
+        console.log("Feel free to watch!");
     }
   }else{
     console.log(closing_time);

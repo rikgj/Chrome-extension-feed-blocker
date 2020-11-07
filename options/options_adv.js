@@ -12,6 +12,7 @@ chrome.storage.sync.get("time_settings", (data) => {
 
   let time_settings = data.time_settings;
   let parent = document.getElementById("container_days");
+  // FIXME: either make theese global, or another more flexy way? repeat in updateRangeVal
   let hours = [15,16,17,18,19,20,21,22,23];
   let mins =  [0,15,30,45];
   for (let i in time_settings){
