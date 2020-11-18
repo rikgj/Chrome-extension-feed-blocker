@@ -8,3 +8,19 @@ Functions on the following sites:
 - Youtube
 - Netflix
 - DisneyPlus
+
+## Screenshots 
+### Feed block on youtube
+![Feed block on youtube](screenshots/Screenshot_youtube.png)
+
+### Streaming blocker on netflix
+![Streaming blocker](screenshots/Screenshot_streaming.png)
+
+### Screenshot from the options menu
+![Options menu](screenshots/Screenshot_opt.png)
+
+### Screenshot from the advanced options menu
+![Advanced options menu](screenshots/Screenshot_advOpt.png)
+
+
+
