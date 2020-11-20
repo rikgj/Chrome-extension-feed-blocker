@@ -16,48 +16,46 @@ let domain = document.location.href.split(".")[1];
 let info = domainInfo[domain];
 let cur_path = document.location.pathname;
 const BLOCK_ID = "feed_blocker";
-// Setting up the html part to block the feed
-let block = document.createElement("DIV");
-block.classList = "block " + domain;
-block.id = BLOCK_ID;
+let block = false;
+
 
 
 function setBlock(){
   // a function that runs until the block parent is detected
+  // Setting up the html part to block the feed
+  let block_el = document.createElement("DIV");
+  block_el.classList = "block " + domain;
+  block_el.id = BLOCK_ID;
+
   setTimeout(()=>{
     let block_parent = document.querySelector(info.block_parent);
     if(block_parent != null){
       // block the feed
-      block_parent.appendChild(block);
-      console.log("you just got blocked");
+      block_parent.appendChild(block_el);
+
+      // set refrence to block element on site
+      block = document.getElementById(BLOCK_ID);
     }else{
-      console.log("it was null");
       setBlock();
     }
   },300);
 }
 
-function clearBlock(){
-  let el = document.getElementById(BLOCK_ID);
-  if(el != null){
-    el.parentNode.removeChild(el);
-    console.log("clearBlock");
-  }else{
-    console.log("clearBlock null")
-  }
-}
-
 function checkPath(){
-  console.log("click");
   setTimeout(()=>{
     if (cur_path != document.location.pathname) {
         cur_path = document.location.pathname;
         if(cur_path.length == 1){
           // there has been navigation to the main site
-          console.log("comapre ok")
-          setBlock();
-        }else if (cur_path.length > 1){
-          clearBlock();
+          if(!block){
+            setBlock();
+          }else{
+            block.hidden = false;
+          }
+
+        }else if (cur_path.length > 1 && block){
+          // nav outisde main site and block is set
+          block.hidden = true
         }
     }
   }, 500);
